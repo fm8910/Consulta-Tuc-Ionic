@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+   <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    
+  </head>
+  <body ng-app="starter" animation="slide-left-right-ios7">
+    <ion-header-bar class="bar bar-header bar-dark">
+   <h1 class="title">Consulta Tuc</h1>
+</ion-header-bar>
+<ion-content has-header="true">
+  <div class="list">
+  <div ng-controller="consultar" class="item item-input-inset" >
+    <label class="item-input-wrapper">
+      <input ng-model="inbuscar" type="tel" placeholder="numero de Tarjeta">
+    </label>
+    <button ng-click="buscar()" class="button fa fa-search fa-lg"></button>
+    <button ng-click="save()"class="button fa fa-save fa-lg"></button>
+  </div>
+</div>
+<ion-list ng-controller="usuario">
+  <ion-item ng-repeat="user in resultado" class="item-button-right" >
+  <a ng-click="buscar(user.numero)" href="" class="item-content">
+   <h1>{{user.nombre}}</h1>
+      <p>{{user.numero + " - C$ "+ user.saldo}}</p>
+      </a>
+    <div class="buttons">
+    <button class="button button-assertive atm">
+      <i class="icon ion-stats-bars"></i>
+       </button>
+     <button ng-click="eliminar(user.numero)"class="button button-assertive atm">
+      <i class="icon ion-trash-a"></i>
+ </button>
+    </div>
+    
+  </ion-item>
+</ion-list>
+
+</ion-content>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+/* Empty. Add your own CSS if you like */
+
+.item p{
+	display: inline-block;
+}
+.item{
+	padding: 10px;
+}
+.item-input-inset .item-input-wrapper input{
+	height: 45px;
+}
+.atm{
+min-width: 52px !important;
+min-height: 47px !important;
+}
+.buttons{
+	margin-top: 10px;
+}
